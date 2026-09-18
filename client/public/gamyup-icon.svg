@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 25 440 440" role="img" aria-labelledby="icontitle icondesc">
+  <title id="icontitle">GamyUp</title>
+  <desc id="icondesc">Isotipo GamyUp: símbolo de evolução em laranja e amarelo, recortado do logotipo oficial.</desc>
+
+  <defs>
+    <linearGradient id="gamyupGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF4D2E"/>
+      <stop offset="48%" stop-color="#FF6B00"/>
+      <stop offset="100%" stop-color="#FFB000"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Isotipo: U de evolução + três níveis ascendentes (recorte idêntico ao arquivo oficial gamyup-logo.svg) -->
+  <g transform="translate(45 45)">
+    <path d="M70 155
+             C70 105 108 72 155 72
+             L155 142
+             C135 142 122 157 122 178
+             L122 276
+             C122 319 149 344 188 344
+             C227 344 254 319 254 276
+             L254 198
+             L304 148
+             L304 276
+             C304 347 258 399 188 399
+             C118 399 70 347 70 276 Z"
+          fill="url(#gamyupGradient)"/>
+
+    <path d="M122 178 L122 115 L164 73 L164 178 Z"
+          fill="url(#gamyupGradient)"/>
+
+    <path d="M177 178 L177 76 L219 34 L219 178 Z"
+          fill="url(#gamyupGradient)"/>
+
+    <path d="M232 178 L232 34 L274 0 L274 178 Z"
+          fill="url(#gamyupGradient)"/>
+
+    <!-- seta de crescimento -->
+    <path d="M274 0 L274 70 L318 70 L318 0 Z"
+          fill="url(#gamyupGradient)"/>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+client/dist/
+server/dist/
+
+# Environment variables (contain secrets / local URLs)
+.env
+.env.local
+.env.*.local
+
+# SQLite database (do not commit local data)
+server/data/*.db
+server/data/*.db-journal
+server/data/*.db-wal
+server/data/*.db-shm
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.log
