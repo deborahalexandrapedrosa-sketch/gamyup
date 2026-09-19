@@ -6,7 +6,7 @@ services:
     rootDir: server
     plan: free
     buildCommand: npm install --include=dev && npm run build
-    startCommand: npm start
+    startCommand: npm run seed && npm start
     autoDeploy: true
     envVars:
       - key: JWT_SECRET
