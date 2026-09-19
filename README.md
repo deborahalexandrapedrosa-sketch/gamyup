@@ -65,10 +65,12 @@ O seed já cria um programa ("Academia de Líderes"), um treinamento, uma turma 
 
 ## Publicar em produção (Render)
 
-O projeto já vem com um [render.yaml](render.yaml) pronto (Render Blueprint) que sobe dois serviços:
+O projeto já vem com um [render.yaml](render.yaml) pronto (Render Blueprint) que sobe dois serviços, ambos no plano gratuito:
 
-- `gamyup-server`: API Node/Express, com disco persistente para o banco SQLite.
+- `gamyup-server`: API Node/Express.
 - `gamyup-client`: build estático do frontend (Vite).
+
+> **Sobre o banco de dados:** o plano gratuito do Render não suporta disco persistente. Isso significa que o arquivo SQLite (`server/data/app.db`) é recriado do zero sempre que o serviço reinicia — o que acontece automaticamente após alguns minutos sem uso, ou a cada novo deploy. Ótimo para demonstrar o app rapidamente e de graça; se for usar com dados reais que precisam persistir, migre para o plano **Starter** (pago) e adicione um `disk` ao serviço `gamyup-server` no `render.yaml`, ou troque o SQLite por um banco gerenciado (ex: Render Postgres).
 
 Passo a passo:
 
@@ -80,7 +82,7 @@ Passo a passo:
 4. Rode o seed de dados de demonstração uma vez, direto no shell do serviço `gamyup-server` no painel do Render: `npm run seed`.
 5. Pronto — acesse a URL do `gamyup-client`. Os QR Codes gerados pelo admin já vão apontar para essa URL pública (variável `CLIENT_URL` do backend), então funcionam também quando escaneados por celular.
 
-> O plano gratuito do Render "dorme" o backend após alguns minutos sem uso — a primeira requisição depois disso demora alguns segundos para acordar o serviço. Isso é normal e não afeta os dados salvos (o disco persistente mantém o SQLite intacto).
+> O plano gratuito do Render "dorme" o backend após alguns minutos sem uso — a primeira requisição depois disso demora alguns segundos para acordar o serviço, **e o banco de dados reinicia zerado** (veja o aviso acima sobre persistência). Rode o `npm run seed` novamente sempre que isso acontecer, se quiser repor os dados de demonstração.
 
 ## Próximos passos sugeridos
 
